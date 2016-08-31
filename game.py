@@ -4,8 +4,11 @@ import random
 
 pygame.init()
 
+# sounds and volumes
 crash_sound = pygame.mixer.Sound('scream.wav')
 pygame.mixer.music.load('funny.mp3')
+crash_sound.set_volume(0.4)
+pygame.mixer.music.set_volume(0.2)
 
 display_width = 800
 display_height = 600
@@ -16,7 +19,7 @@ red = (200,0,0)
 green = (0,200,0)
 bright_red = (255,0,0)
 bright_green = (0,255,0)
-#for random_colors:  (random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255))
+# for random_colors:  (random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255))
 
 player_width = 140
 
@@ -165,7 +168,8 @@ def game_loop():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-                
+            
+            # controls
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     x_change = -10
