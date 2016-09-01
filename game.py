@@ -47,7 +47,6 @@ def text_objects(text, font):
     return textSurface, textSurface.get_rect()   
     
 def crash():
-
     pygame.mixer.music.stop()
     pygame.mixer.Sound.play(crash_sound)    
     
@@ -95,9 +94,8 @@ def unpause():
     pause = False
     
 def paused():
-
     pygame.mixer.music.pause()
-
+    
     largeText = pygame.font.Font('freesansbold.ttf',60)
     TextSurf, TextRect = text_objects('PAUSED', largeText)
     TextRect.center = ((display_width/2),(display_height/2))
@@ -199,10 +197,10 @@ def game_loop():
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0, display_width-100)
             dodged += 1
-            thing_speed *= 1.01
-            if dodged > 20:
+            thing_speed *= 1.06
+            if 20 > dodged > 10:
                 thing_speed *= 1.04
-            elif dodged > 10:
+            elif dodged >= 20:
                 thing_speed *= 1.02
         
         # player collisions
