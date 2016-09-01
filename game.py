@@ -14,12 +14,10 @@ display_width = 800
 display_height = 600
 
 black = (0,0,0)
-white = (255,255,255)
 red = (200,0,0)
 green = (0,200,0)
 bright_red = (255,0,0)
 bright_green = (0,255,0)
-# for random_colors:  (random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255))
 
 player_width = 140
 
@@ -64,8 +62,6 @@ def crash():
                 quit()
         
         mouse = pygame.mouse.get_pos()
-        #print(mouse)
-        
         button('PLAY AGAIN',150,450,150,50,green,bright_green,game_loop)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
             
@@ -113,8 +109,6 @@ def paused():
                 quit()
         
         mouse = pygame.mouse.get_pos()
-        #print(mouse)
-        
         button('UNPAUSE',150,450,150,50,green,bright_green,unpause)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
             
@@ -135,7 +129,6 @@ def game_intro():
         gameDisplay.blit(TextSurf, TextRect)
         
         mouse = pygame.mouse.get_pos()
-        #print(mouse)
         
         button('START',150,450,100,50,green,bright_green,game_loop)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
@@ -183,6 +176,7 @@ def game_loop():
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
                     
+        # initiates the player movement          
         x += x_change
         # background color
         gameDisplay.fill((random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255)))
@@ -205,16 +199,17 @@ def game_loop():
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0, display_width-100)
             dodged += 1
-            thing_speed *= 1.02
+            thing_speed *= 1.01
+            if dodged > 20:
+                thing_speed *= 1.04
+            elif dodged > 10:
+                thing_speed *= 1.02
         
         # player collisions
         if y < thing_starty+thing_height:
-            # print('y crossover')
             if x > thing_startx and x < thing_startx + thing_width or x + player_width > thing_startx and x + player_width < thing_startx + thing_width or x < thing_startx and x + player_width > thing_startx + thing_width:
-                # print('x crossover')
                 crash()
                 
-            
         # sets everything running at 60fps        
         pygame.display.update()
         clock.tick(60)
