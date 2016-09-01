@@ -119,7 +119,7 @@ def paused():
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
             
         pygame.display.update()
-        clock.tick(15)
+        clock.tick(60)
     
 def game_intro():
     intro = True
@@ -141,7 +141,7 @@ def game_intro():
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
             
         pygame.display.update()
-        clock.tick(15)
+        clock.tick(60)
     
 def game_loop():
     global pause
@@ -184,10 +184,9 @@ def game_loop():
                     x_change = 0
                     
         x += x_change
-                
+        # background color
         gameDisplay.fill((random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255)))
-        
-        # things(thingx, thingy, thingw, thingh, color)
+        # block color
         block_color = (random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255))
         gameDisplay.blit(playerImg,(x,y))
         things(thing_startx, thing_starty, thing_width, thing_height, block_color)
@@ -210,9 +209,9 @@ def game_loop():
         
         # player collisions
         if y < thing_starty+thing_height:
-            #print('y crossover')
-            if x > thing_startx and x < thing_startx+thing_width or x+player_width > thing_startx and x+player_width < thing_startx+thing_width or x < thing_startx and x+player_width > thing_startx+thing_width:
-                #print('x crossover')
+            # print('y crossover')
+            if x > thing_startx and x < thing_startx + thing_width or x + player_width > thing_startx and x + player_width < thing_startx + thing_width or x < thing_startx and x + player_width > thing_startx + thing_width:
+                # print('x crossover')
                 crash()
                 
             
