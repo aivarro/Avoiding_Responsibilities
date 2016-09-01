@@ -5,9 +5,9 @@ import random
 pygame.init()
 
 # sounds and volumes
-crash_sound = pygame.mixer.Sound('scream.wav')
+collision_sound = pygame.mixer.Sound('scream.wav')
 pygame.mixer.music.load('funny.mp3')
-crash_sound.set_volume(0.4)
+collision_sound.set_volume(0.4)
 pygame.mixer.music.set_volume(0.2)
 
 display_width = 800
@@ -46,9 +46,9 @@ def text_objects(text, font):
     textSurface = font.render(text, True, black)
     return textSurface, textSurface.get_rect()   
     
-def crash():
+def collision():
     pygame.mixer.music.stop()
-    pygame.mixer.Sound.play(crash_sound)    
+    pygame.mixer.Sound.play(collision_sound)    
     
     largeText = pygame.font.Font('freesansbold.ttf',24)
     TextSurf, TextRect = text_objects('Responsibilities will always find a way to get you!', largeText)
@@ -139,6 +139,7 @@ def game_loop():
     
     pygame.mixer.music.play(-1)
     
+    # set inital player position
     x = (display_width * 0.45)
     y = (display_height * 0.8)
 
@@ -197,8 +198,9 @@ def game_loop():
             thing_starty = 0 - thing_height
             thing_startx = random.randrange(0, display_width-100)
             dodged += 1
-            thing_speed *= 1.06
-            if 20 > dodged > 10:
+            if dodged <= 10:
+                thing_speed *= 1.06
+            elif 20 > dodged > 10:
                 thing_speed *= 1.04
             elif dodged >= 20:
                 thing_speed *= 1.02
@@ -206,7 +208,7 @@ def game_loop():
         # player collisions
         if y < thing_starty+thing_height:
             if x > thing_startx and x < thing_startx + thing_width or x + player_width > thing_startx and x + player_width < thing_startx + thing_width or x < thing_startx and x + player_width > thing_startx + thing_width:
-                crash()
+                collision()
                 
         # sets everything running at 60fps        
         pygame.display.update()
