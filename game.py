@@ -48,7 +48,7 @@ def text_objects(text, font):
     
 def collision():
     pygame.mixer.music.stop()
-    pygame.mixer.Sound.play(collision_sound)    
+    pygame.mixer.Sound.play(collision_sound)   
     
     largeText = pygame.font.Font('freesansbold.ttf',24)
     TextSurf, TextRect = text_objects('Responsibilities will always find a way to get you!', largeText)
@@ -200,7 +200,7 @@ def game_loop():
             dodged += 1
             if dodged <= 10:
                 thing_speed *= 1.06
-            elif 20 > dodged > 10:
+            elif 10 < dodged < 20:
                 thing_speed *= 1.04
             elif dodged >= 20:
                 thing_speed *= 1.02
