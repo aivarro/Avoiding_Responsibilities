@@ -44,11 +44,11 @@ def player(x,y):
     
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
-    return textSurface, textSurface.get_rect()   
+    return textSurface, textSurface.get_rect()
     
 def collision():
     pygame.mixer.music.stop()
-    pygame.mixer.Sound.play(collision_sound)   
+    pygame.mixer.Sound.play(collision_sound)
     
     largeText = pygame.font.Font('freesansbold.ttf',24)
     TextSurf, TextRect = text_objects('Responsibilities will always find a way to get you!', largeText)
@@ -63,7 +63,7 @@ def collision():
         mouse = pygame.mouse.get_pos()
         button('PLAY AGAIN',150,450,150,50,green,bright_green,game_loop)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
-            
+        
         pygame.display.update()
         clock.tick(15)
 
@@ -105,14 +105,14 @@ def paused():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        
+                
         mouse = pygame.mouse.get_pos()
         button('UNPAUSE',150,450,150,50,green,bright_green,unpause)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
-            
+        
         pygame.display.update()
         clock.tick(60)
-    
+
 def game_intro():
     intro = True
     while intro:
@@ -130,10 +130,10 @@ def game_intro():
         
         button('START',150,450,100,50,green,bright_green,game_loop)
         button('QUIT',550,450,100,50,red,bright_red,quitgame)
-            
+        
         pygame.display.update()
         clock.tick(60)
-    
+
 def game_loop():
     global pause
     
@@ -175,7 +175,7 @@ def game_loop():
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                     x_change = 0
                     
-        # initiates the player movement          
+        # initiates the player movement
         x += x_change
         # background color
         gameDisplay.fill((random.randrange(1, 255),random.randrange(1, 255),random.randrange(1, 255)))
@@ -210,11 +210,11 @@ def game_loop():
             if x > thing_startx and x < thing_startx + thing_width or x + player_width > thing_startx and x + player_width < thing_startx + thing_width or x < thing_startx and x + player_width > thing_startx + thing_width:
                 collision()
                 
-        # sets everything running at 60fps        
+        # sets everything running at 60fps
         pygame.display.update()
         clock.tick(60)
 
-game_intro()    
+game_intro()
 game_loop()
 pygame.quit()
 quit()
