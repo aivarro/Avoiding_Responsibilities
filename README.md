@@ -4,14 +4,19 @@ WARNING!
     THIS GAME CONTAINS FLASHING LIGHTS WHICH COULD INDUCE SEIZURES IF YOU HAVE EPILEPSY!
 
 
-ABOUT:
-    THE GAME IS QUITE SELF-EXPLANATORY, IT IS FOR WASTING TIME BY COLLECTING PROCRASTINATION POINTS. YOU CAN DO SO BY AVOIDING FALLING BLOCKS.
-    YOU CAN PLAY THE GAME IF YOU HAVE PYTHON AND PYGAME INSTALLED.
+About:
+    The game is quite self-explanatory, it is for wasting time by collecting pracrastination points. You can do so by avoiding falling blocks.
+    You can play the game if you have python and pygame installed.
 
-CONTROLS:
-    LEFT ARROW FOR GOING LEFT
-    RIGHT ARROW FOR GOING RIGHT
-    SPACEBAR FOR PAUSE
-    EVERYTHING ELSE WITH MOUSE AND LEFT CLICK
+Controls:
+    Left arrow for going left.
+    Right arrow for going right.
+    Spacebar for pause.
+    Everything else with mouse and left click.
     
-THIS SPECIFIC GAME IS CREATED BY AIVAR ROMANDI USING FREE TO USE MATERIALS FROM THE INTERNET
+This specific game is created by Aivar Romandi using free to use materials from the internet:
+    Sounds and music:
+        https://www.freesound.org/people/blimp66/sounds/88020/
+        https://archive.org/details/WilhelmScreamSample
+    Coding help from:
+        https://pythonprogramming.net/
