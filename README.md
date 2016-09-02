@@ -15,8 +15,12 @@ Controls:
     Everything else with mouse and left click.
     
 This specific game is created by Aivar Romandi using free to use materials from the internet:
+
 Sounds and music:
-https://www.freesound.org/people/blimp66/sounds/88020/
-https://archive.org/details/WilhelmScreamSample
+
+    https://www.freesound.org/people/blimp66/sounds/88020/
+    https://archive.org/details/WilhelmScreamSample
+    
 Coding help from:
-https://pythonprogramming.net/
+
+    https://pythonprogramming.net/
