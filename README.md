@@ -5,7 +5,7 @@ WARNING!
 
 
 About:
-    The game is quite self-explanatory, it is for wasting time by collecting pracrastination points. You can do so by avoiding falling blocks.
+    The game is quite self-explanatory, it is for wasting time by collecting procrastination points. You can do so by avoiding falling blocks.
     You can play the game if you have python and pygame installed.
 
 Controls:
